@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+div{
+    padding: 5px;
+    border: solid 1px black;
+    border-radius: 0 3px 0 3px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+button{
+    background: black;
+    color: white;
+    border: solid 2px black;
+    padding: .375em 1.125em;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+button + button{
+    background: white;
+    color: black;
+}

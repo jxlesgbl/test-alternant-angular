@@ -24,7 +24,7 @@ export class DogService {
 
   getDog(id: number): Observable<Dog> {
     return this.http.get<Dog>(`${this.dogUrl}/${id}`)
-  } 
+  }
 
   updateDog(dog: Dog): Observable<any> {
     return this.http.put(this.dogUrl, dog, this.httpOptions)

@@ -1,1 +1,22 @@
 <h1>Dogs component</h1>
+
+<ul class="container">
+    <div *ngFor="let dog of dogs">
+        <ng-container *ngIf="!dog.editing; else editMode">
+            <h4>{{ dog.name }}</h4>
+            <img width="100px" src="{{ dog.img }}" alt="{{ dog.name }}">
+
+            <button type="button" (click)="deleteDog(dog)">
+                Delete {{ dog.name }}
+            </button>
+            <button type="button" (click)="startUpdate(dog)">
+                Update {{ dog.name }}'s name
+            </button>
+        </ng-container>
+        <ng-template #editMode>
+            <input [(ngModel)]="dog.name" (keydown.enter)="updateDog(dog)" (blur)="cancelUpdate(dog)">
+            <button (click)="updateDog(dog)">Enregistrer</button>
+            <button (click)="cancelUpdate(dog)">Annuler</button>
+        </ng-template>
+    </div>
+</ul>
